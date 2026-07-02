@@ -46,22 +46,12 @@ def _print_individual_result(
         return
 
     color = _get_color(result, failed)
-    subtitle = (
-        "" if result.changed is None else " ** changed : {} ".format(result.changed)
-    )
+    subtitle = "" if result.changed is None else " ** changed : {} ".format(result.changed)
     level_name = logging.getLevelName(result.severity_level)
     symbol = "v" if task_group else "-"
-    host = (
-        f"{result.host.name}: "
-        if (print_host and result.host and result.host.name)
-        else ""
-    )
+    host = f"{result.host.name}: " if (print_host and result.host and result.host.name) else ""
     msg = "{} {}{}{}".format(symbol * 4, host, result.name, subtitle)
-    print(
-        "{}{}{}{} {}".format(
-            Style.BRIGHT, color, msg, symbol * (80 - len(msg)), level_name
-        )
-    )
+    print("{}{}{}{} {}".format(Style.BRIGHT, color, msg, symbol * (80 - len(msg)), level_name))
     for attribute in attrs:
         x = getattr(result, attribute, "")
         if isinstance(x, BaseException):
@@ -92,14 +82,10 @@ def _print_result(
         print("{}{}{}{}".format(Style.BRIGHT, Fore.CYAN, msg, "*" * (80 - len(msg))))
         for host, host_data in sorted(result.items()):
             title = (
-                ""
-                if host_data.changed is None
-                else " ** changed : {} ".format(host_data.changed)
+                "" if host_data.changed is None else " ** changed : {} ".format(host_data.changed)
             )
             msg = "* {}{}".format(host, title)
-            print(
-                "{}{}{}{}".format(Style.BRIGHT, Fore.BLUE, msg, "*" * (80 - len(msg)))
-            )
+            print("{}{}{}{}".format(Style.BRIGHT, Fore.BLUE, msg, "*" * (80 - len(msg))))
             _print_result(host_data, attrs, failed, severity_level)
     elif isinstance(result, MultiResult):
         _print_individual_result(
@@ -117,9 +103,7 @@ def _print_result(
         if result[0].severity_level >= severity_level:
             print("{}{}{}{}".format(Style.BRIGHT, color, msg, "^" * (80 - len(msg))))
     elif isinstance(result, Result):
-        _print_individual_result(
-            result, attrs, failed, severity_level, print_host=print_host
-        )
+        _print_individual_result(result, attrs, failed, severity_level, print_host=print_host)
 
 
 def print_result(
