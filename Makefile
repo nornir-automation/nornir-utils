@@ -1,6 +1,6 @@
 NAME=$(shell basename $(PWD))
 
-PYTHON:=3.7
+PYTHON:=3.12
 
 DOCKER_COMPOSE_FILE=docker-compose.yml
 DOCKER_COMPOSE=docker compose -f ${DOCKER_COMPOSE_FILE}
@@ -32,26 +32,26 @@ stop_dev_env:
 .PHONY: pytest
 pytest:
 	rm -f docs/source/tutorials/out_files/*.txt
-	poetry run pytest --nbval -vs ${ARGS} docs/source/tutorials
+	uv run pytest --nbval -vs ${ARGS} docs/source/tutorials
 
 .PHONY: format
 format:
-	poetry run ruff format --check .
+	uv run ruff format --check .
 
 .PHONY: ruff
 ruff:
-	poetry run ruff check .
+	uv run ruff check .
 
 .PHONY: mypy
 mypy:
-	poetry run mypy nornir_utils
+	uv run mypy nornir_utils
 
 .PHONY: tests
 tests: format ruff mypy pytest
 
 .PHONY:
 jupyter:
-	poetry run jupyter notebook --no-browser
+	uv run jupyter notebook --no-browser
 
 .PHONY: docker-tests
 docker-tests: docker
