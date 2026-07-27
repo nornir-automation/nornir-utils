@@ -49,9 +49,7 @@ class PrintResult:
     def task_instance_started(self, task: Task, host: Host) -> None:
         pass
 
-    def task_instance_completed(
-        self, task: Task, host: Host, results: MultiResult
-    ) -> None:
+    def task_instance_completed(self, task: Task, host: Host, results: MultiResult) -> None:
         self.lock.acquire()
         if task.severity_level < self.severity_level:
             self.lock.release()
@@ -60,9 +58,7 @@ class PrintResult:
         # print task
         msg = f"vvvv {task.name} - {host.name} ** changed: {results.changed} "
         level_name = logging.getLevelName(results.severity_level)
-        print(
-            f"{Style.BRIGHT}{_get_color(results)}{msg}{'v' * (80 - len(msg))} {level_name}"
-        )
+        print(f"{Style.BRIGHT}{_get_color(results)}{msg}{'v' * (80 - len(msg))} {level_name}")
         print(results.result)
 
         # print task footer
@@ -73,7 +69,5 @@ class PrintResult:
     def subtask_instance_started(self, task: Task, host: Host) -> None:
         self.task_instance_started(task, host)
 
-    def subtask_instance_completed(
-        self, task: Task, host: Host, result: MultiResult
-    ) -> None:
+    def subtask_instance_completed(self, task: Task, host: Host, result: MultiResult) -> None:
         self.task_instance_completed(task, host, result)

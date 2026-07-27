@@ -34,20 +34,20 @@ pytest:
 	rm -f docs/source/tutorials/out_files/*.txt
 	poetry run pytest --nbval -vs ${ARGS} docs/source/tutorials
 
-.PHONY: black
-black:
-	poetry run black --check .
+.PHONY: format
+format:
+	poetry run ruff format --check .
 
-.PHONY: pylama
-pylama:
-	poetry run pylama .
+.PHONY: ruff
+ruff:
+	poetry run ruff check .
 
 .PHONY: mypy
 mypy:
 	poetry run mypy nornir_utils
 
 .PHONY: tests
-tests: black pylama mypy pytest
+tests: format ruff mypy pytest
 
 .PHONY:
 jupyter:

@@ -7,9 +7,9 @@ jobs:
     name: linters
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Setup python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
 
       - name: Install and configure Poetry
         uses: snok/install-poetry@v1
@@ -17,20 +17,20 @@ jobs:
           virtualenvs-path: ~/.virtualenvs
 
       - name: Cache Poetry virtualenv
-        uses: actions/cache@v1
+        uses: actions/cache@v6
         id: cache
         with:
           path: ~/.virtualenvs
-          key: poetry-${{ matrix.python-version }}-${{ hashFiles('**/poetry.lock') }}
-          restore-keys: poetry-${{ matrix.python-version }}-${{ hashFiles('**/poetry.lock') }}
+          key: poetry-${{ hashFiles('**/poetry.lock') }}
+          restore-keys: poetry-${{ hashFiles('**/poetry.lock') }}
 
       - name: Install Dependencies
         run: poetry install
 
-      - name: Run pylama
-        run: make pylama
-      - name: Run black
-        run: make black
+      - name: Run ruff
+        run: make ruff
+      - name: Run format
+        run: make format
       - name: Run mypy
         run: make mypy
 
@@ -40,17 +40,16 @@ jobs:
     strategy:
       matrix:
         python-version:
-          - '3.8'
-          - '3.9'
           - '3.10'
           - '3.11'
           - '3.12'
+          - '3.13'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Start dev env
         run: make start_dev_env
       - name: Setup python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python-version }}
           architecture: x64
@@ -61,7 +60,7 @@ jobs:
           virtualenvs-path: ~/.virtualenvs
 
       - name: Cache Poetry virtualenv
-        uses: actions/cache@v1
+        uses: actions/cache@v6
         id: cache
         with:
           path: ~/.virtualenvs
@@ -78,11 +77,11 @@ jobs:
     name: Releasing to pypi
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Setup python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
-          python-version: 3.8
+          python-version: '3.12'
 
       - name: Install and configure Poetry
         uses: snok/install-poetry@v1
@@ -94,7 +93,7 @@ jobs:
 
       - name: Publish package
         if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')
-        uses: pypa/gh-action-pypi-publish@master
+        uses: pypa/gh-action-pypi-publish@release/v1
         with:
           user: __token__
           password: ${{ secrets.pypi_password }}
