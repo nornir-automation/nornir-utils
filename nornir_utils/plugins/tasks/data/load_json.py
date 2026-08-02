@@ -23,7 +23,7 @@ def load_json(task: Task, file: str) -> Result:
         Result object with the following attributes set:
           * result (``dict``): dictionary with the contents of the file
     """
-    with open(file, "r") as f:
+    with open(file) as f:
         data = json.loads(f.read())
 
     return Result(host=task.host, result=data)

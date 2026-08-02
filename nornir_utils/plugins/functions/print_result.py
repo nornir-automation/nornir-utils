@@ -1,7 +1,7 @@
 import logging
 import pprint
 import threading
-from typing import List, cast, Optional, Union
+from typing import cast
 from collections import OrderedDict
 import json
 
@@ -20,7 +20,7 @@ def print_title(title: str) -> None:
     """
     Helper function to print a title.
     """
-    msg = "**** {} ".format(title)
+    msg = f"**** {title} "
     print("{}{}{}{}".format(Style.BRIGHT, Fore.GREEN, msg, "*" * (80 - len(msg))))
 
 
@@ -36,7 +36,7 @@ def _get_color(result: Result, failed: bool) -> str:
 
 def _print_individual_result(
     result: Result,
-    attrs: List[str],
+    attrs: list[str],
     failed: bool,
     severity_level: int,
     task_group: bool = False,
@@ -46,12 +46,12 @@ def _print_individual_result(
         return
 
     color = _get_color(result, failed)
-    subtitle = "" if result.changed is None else " ** changed : {} ".format(result.changed)
+    subtitle = "" if result.changed is None else f" ** changed : {result.changed} "
     level_name = logging.getLevelName(result.severity_level)
     symbol = "v" if task_group else "-"
     host = f"{result.host.name}: " if (print_host and result.host and result.host.name) else ""
-    msg = "{} {}{}{}".format(symbol * 4, host, result.name, subtitle)
-    print("{}{}{}{} {}".format(Style.BRIGHT, color, msg, symbol * (80 - len(msg)), level_name))
+    msg = f"{symbol * 4} {host}{result.name}{subtitle}"
+    print(f"{Style.BRIGHT}{color}{msg}{symbol * (80 - len(msg))} {level_name}")
     for attribute in attrs:
         x = getattr(result, attribute, "")
         if isinstance(x, BaseException):
@@ -67,8 +67,8 @@ def _print_individual_result(
 
 
 def _print_result(
-    result: Union[Result, AggregatedResult, MultiResult],
-    attrs: Optional[List[str]] = None,
+    result: Result | AggregatedResult | MultiResult,
+    attrs: list[str] | None = None,
     failed: bool = False,
     severity_level: int = logging.INFO,
     print_host: bool = False,
@@ -81,10 +81,8 @@ def _print_result(
         msg = result.name
         print("{}{}{}{}".format(Style.BRIGHT, Fore.CYAN, msg, "*" * (80 - len(msg))))
         for host, host_data in sorted(result.items()):
-            title = (
-                "" if host_data.changed is None else " ** changed : {} ".format(host_data.changed)
-            )
-            msg = "* {}{}".format(host, title)
+            title = "" if host_data.changed is None else f" ** changed : {host_data.changed} "
+            msg = f"* {host}{title}"
             print("{}{}{}{}".format(Style.BRIGHT, Fore.BLUE, msg, "*" * (80 - len(msg))))
             _print_result(host_data, attrs, failed, severity_level)
     elif isinstance(result, MultiResult):
@@ -99,7 +97,7 @@ def _print_result(
         for r in result[1:]:
             _print_result(r, attrs, failed, severity_level)
         color = _get_color(result[0], failed)
-        msg = "^^^^ END {} ".format(result[0].name)
+        msg = f"^^^^ END {result[0].name} "
         if result[0].severity_level >= severity_level:
             print("{}{}{}{}".format(Style.BRIGHT, color, msg, "^" * (80 - len(msg))))
     elif isinstance(result, Result):
@@ -107,8 +105,8 @@ def _print_result(
 
 
 def print_result(
-    result: Union[Result, AggregatedResult, MultiResult],
-    vars: Optional[List[str]] = None,
+    result: Result | AggregatedResult | MultiResult,
+    vars: list[str] | None = None,
     failed: bool = False,
     severity_level: int = logging.INFO,
 ) -> None:

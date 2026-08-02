@@ -1,15 +1,14 @@
 import difflib
 import os
-from typing import List, Optional
 
 from nornir.core.task import Result, Task
 
 
-def _read_file(file: str) -> List[str]:
+def _read_file(file: str) -> list[str]:
     if not os.path.exists(file):
         return []
 
-    with open(file, "r") as f:
+    with open(file) as f:
         return f.read().splitlines()
 
 
@@ -32,7 +31,7 @@ def write_file(
     filename: str,
     content: str,
     append: bool = False,
-    dry_run: Optional[bool] = None,
+    dry_run: bool | None = None,
 ) -> Result:
     """
     Write contents to a file (locally)

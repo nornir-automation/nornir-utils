@@ -1,6 +1,6 @@
 import logging
 import threading
-from typing import Union, cast
+from typing import cast
 
 from colorama import Fore, Style, init
 
@@ -10,7 +10,7 @@ from nornir.core.task import AggregatedResult, MultiResult, Result, Task
 init(autoreset=True, strip=False)
 
 
-def _get_color(result: Union[MultiResult, Result]) -> str:
+def _get_color(result: MultiResult | Result) -> str:
     if result.failed:
         color = Fore.RED
     elif result.changed:
