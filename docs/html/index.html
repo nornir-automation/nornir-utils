@@ -1,23 +1,22 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>nornir_utils &mdash; nornir_utils  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -73,41 +72,43 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <a class="reference external image-reference" href="https://nornir.tech/nornir_utils/"><img alt="Documentation" src="https://img.shields.io/badge/docs-passing-green.svg" /></a>
-<a class="reference external image-reference" href="https://github.com/nornir-automation/nornir_utils/actions?query=workflow%3Atest_nornir_utils"><img alt="test_nornir_utils" src="https://github.com/nornir-automation/nornir_utils/workflows/test_nornir_utils/badge.svg" /></a>
+  <a class="reference external image-reference" href="https://nornir.tech/nornir-utils/"><img alt="Documentation" src="https://img.shields.io/badge/docs-passing-green.svg" />
+</a>
+<a class="reference external image-reference" href="https://github.com/nornir-automation/nornir-utils/actions?query=workflow%3Atest_nornir_utils"><img alt="test_nornir_utils" src="https://github.com/nornir-automation/nornir-utils/workflows/test_nornir_utils/badge.svg" />
+</a>
 <section id="nornir-utils">
-<h1>nornir_utils<a class="headerlink" href="#nornir-utils" title="Permalink to this heading"></a></h1>
-<p>Collection of simple plugins for <a class="reference external" href="github.com/nornir-automation/nornir/">nornir</a></p>
+<h1>nornir_utils<a class="headerlink" href="#nornir-utils" title="Link to this heading"></a></h1>
+<p>Collection of simple plugins for <a class="reference external" href="https://github.com/nornir-automation/nornir/">nornir</a></p>
 <section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h2>
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">nornir_utils</span>
 </pre></div>
 </div>
 </section>
 <section id="plugins">
-<h2>Plugins<a class="headerlink" href="#plugins" title="Permalink to this heading"></a></h2>
+<h2>Plugins<a class="headerlink" href="#plugins" title="Link to this heading"></a></h2>
 <section id="inventory">
-<h3>Inventory<a class="headerlink" href="#inventory" title="Permalink to this heading"></a></h3>
+<h3>Inventory<a class="headerlink" href="#inventory" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><strong>YAMLInventory</strong> - Create an inventory from yaml files</p></li>
 <li><p><strong>load_credentials</strong> - Transform function to load credentials from venv</p></li>
 </ul>
 </section>
 <section id="functions">
-<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this heading"></a></h3>
+<h3>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><strong>print_result</strong> - Formats nicely and prints results on stdout.</p></li>
 <li><p><strong>print_title</strong> - Formats nicely a title and prints it on stdout.</p></li>
 </ul>
 </section>
 <section id="processors">
-<h3>Processors<a class="headerlink" href="#processors" title="Permalink to this heading"></a></h3>
+<h3>Processors<a class="headerlink" href="#processors" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><strong>PrintResult</strong> - Formats nicely and prints results on stdout as soon as they are made available.</p></li>
 </ul>
 </section>
 <section id="tasks">
-<h3>Tasks<a class="headerlink" href="#tasks" title="Permalink to this heading"></a></h3>
+<h3>Tasks<a class="headerlink" href="#tasks" title="Link to this heading"></a></h3>
 <p>Data:</p>
 <ul class="simple">
 <li><p><strong>echo_data</strong> - Dummy task that echoes the data passed to it.</p></li>
@@ -151,7 +152,7 @@
 </section>
 </section>
 <section id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading"></a></h1>
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading"></a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>

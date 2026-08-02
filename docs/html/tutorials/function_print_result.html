@@ -1,26 +1,25 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>functions: print_result &mdash; nornir_utils  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -95,15 +94,15 @@
            <div itemprop="articleBody">
              
   <section id="functions:-print_result">
-<h1>functions: print_result<a class="headerlink" href="#functions:-print_result" title="Permalink to this heading"></a></h1>
+<h1>functions: print_result<a class="headerlink" href="#functions:-print_result" title="Link to this heading"></a></h1>
 <p><a class="reference internal" href="../api/functions.html#nornir_utils.plugins.functions.print_result"><span class="std std-ref">print_result</span></a> is a function that takes a result and prints it. For instance, imagine the following code:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nornir</span> <span class="kn">import</span> <span class="n">InitNornir</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">nornir</span><span class="w"> </span><span class="kn">import</span> <span class="n">InitNornir</span>
 
-<span class="k">def</span> <span class="nf">dummy_task</span><span class="p">(</span><span class="n">task</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">dummy_task</span><span class="p">(</span><span class="n">task</span><span class="p">):</span>
     <span class="k">return</span> <span class="s2">&quot;hi!!!&quot;</span>
 
 <span class="n">nr</span> <span class="o">=</span> <span class="n">InitNornir</span><span class="p">(</span>
@@ -126,7 +125,7 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nornir_utils.plugins.functions</span> <span class="kn">import</span> <span class="n">print_result</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">nornir_utils.plugins.functions</span><span class="w"> </span><span class="kn">import</span> <span class="n">print_result</span>
 
 <span class="n">print_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </pre></div>
@@ -162,15 +161,15 @@ hi!!!
 </pre></div></div>
 </div>
 <section id="Printing-specific-data">
-<h2>Printing specific data<a class="headerlink" href="#Printing-specific-data" title="Permalink to this heading"></a></h2>
+<h2>Printing specific data<a class="headerlink" href="#Printing-specific-data" title="Link to this heading"></a></h2>
 <p>If the task returns different pieces of information you can also select which ones to print. For instance:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nornir.core.task</span> <span class="kn">import</span> <span class="n">Result</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">nornir.core.task</span><span class="w"> </span><span class="kn">import</span> <span class="n">Result</span>
 
-<span class="k">def</span> <span class="nf">task_with_data</span><span class="p">(</span><span class="n">task</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">task_with_data</span><span class="p">(</span><span class="n">task</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">Result</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="n">task</span><span class="o">.</span><span class="n">host</span><span class="p">,</span> <span class="n">sw_char</span><span class="o">=</span><span class="s2">&quot;Jar Jar Binks&quot;</span><span class="p">,</span> <span class="n">food</span><span class="o">=</span><span class="s2">&quot;hawaiian pizza&quot;</span><span class="p">,</span> <span class="n">OS</span><span class="o">=</span><span class="s2">&quot;windows&quot;</span><span class="p">)</span>
 
 
@@ -216,15 +215,15 @@ hawaiian pizza
 </div>
 </section>
 <section id="Severity">
-<h2>Severity<a class="headerlink" href="#Severity" title="Permalink to this heading"></a></h2>
+<h2>Severity<a class="headerlink" href="#Severity" title="Link to this heading"></a></h2>
 <p>You can also ask <code class="docutils literal notranslate"><span class="pre">print_result</span></code> to print the results only if the severity is equal or superior to the one specified. This is particularly useful if your script is very large and you don’t care about intermediate results. For instance:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
 
-<span class="k">def</span> <span class="nf">complex_task</span><span class="p">(</span><span class="n">task</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">complex_task</span><span class="p">(</span><span class="n">task</span><span class="p">):</span>
     <span class="n">task</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">task</span><span class="o">=</span><span class="n">dummy_task</span><span class="p">,</span> <span class="n">severity_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
     <span class="n">task</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">task</span><span class="o">=</span><span class="n">dummy_task</span><span class="p">,</span> <span class="n">severity_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
     <span class="n">task</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">task</span><span class="o">=</span><span class="n">dummy_task</span><span class="p">,</span> <span class="n">severity_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
