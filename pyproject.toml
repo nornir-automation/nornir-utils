@@ -1,5 +1,5 @@
 [project]
-name = "nornir_utils"
+name = "nornir-utils"
 version = "0.3.0"
 description = "Collection of plugins and functions for nornir that don't require external dependencies"
 authors = [{ name = "David Barroso", email = "dbarrosop@dravetech.com" }]
@@ -22,7 +22,7 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/nornir-automation/nornir_utils"
+Repository = "https://github.com/nornir-automation/nornir-utils"
 
 [project.entry-points."nornir.plugins.inventory"]
 YAMLInventory = "nornir_utils.plugins.inventory.yaml_inventory:YAMLInventory"
