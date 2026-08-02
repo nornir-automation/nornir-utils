@@ -1,6 +1,6 @@
 [project]
 name = "nornir_utils"
-version = "0.2.0"
+version = "0.3.0"
 description = "Collection of plugins and functions for nornir that don't require external dependencies"
 authors = [{ name = "David Barroso", email = "dbarrosop@dravetech.com" }]
 license = "Apache-2.0"
