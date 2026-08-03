@@ -1,26 +1,25 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>processor: PrintResult &mdash; nornir_utils  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -94,7 +93,7 @@
            <div itemprop="articleBody">
              
   <section id="processor:-PrintResult">
-<h1>processor: PrintResult<a class="headerlink" href="#processor:-PrintResult" title="Permalink to this heading"></a></h1>
+<h1>processor: PrintResult<a class="headerlink" href="#processor:-PrintResult" title="Link to this heading"></a></h1>
 <p><a class="reference internal" href="../api/processors.html#nornir_utils.plugins.processors.PrintResult"><span class="std std-ref">PrintResult</span></a> is a <a class="reference external" href="https://nornir.readthedocs.io/en/latest/tutorials/intro/processors.html">processor</a> that prints results similarly to the <code class="docutils literal notranslate"><span class="pre">print_result</span></code> function, however, because this is a processor it is done asynchronously. For instance:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -102,10 +101,10 @@
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># NBVAL_IGNORE_OUTPUT</span>
 
-<span class="kn">from</span> <span class="nn">nornir</span> <span class="kn">import</span> <span class="n">InitNornir</span>
-<span class="kn">from</span> <span class="nn">nornir_utils.plugins.processors</span> <span class="kn">import</span> <span class="n">PrintResult</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nornir</span><span class="w"> </span><span class="kn">import</span> <span class="n">InitNornir</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nornir_utils.plugins.processors</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrintResult</span>
 
-<span class="k">def</span> <span class="nf">dummy_task</span><span class="p">(</span><span class="n">task</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">dummy_task</span><span class="p">(</span><span class="n">task</span><span class="p">):</span>
     <span class="k">return</span> <span class="s2">&quot;hi!!!&quot;</span>
 
 <span class="n">nr</span> <span class="o">=</span> <span class="n">InitNornir</span><span class="p">(</span>
@@ -151,16 +150,16 @@ hi!!!
 </div>
 <p>Notice we never printed the result explicitly, instead, the processors printed it on screen as soon as the results where made available. This is particularly useful if some hosts take long to complete while others are faster and you want feedback as soon as possible.</p>
 <section id="Severity">
-<h2>Severity<a class="headerlink" href="#Severity" title="Permalink to this heading"></a></h2>
+<h2>Severity<a class="headerlink" href="#Severity" title="Link to this heading"></a></h2>
 <p>By default <code class="docutils literal notranslate"><span class="pre">PrintResult</span></code> will only print <code class="docutils literal notranslate"><span class="pre">INFO</span></code> or above levels so the following code will skip intermediate results:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># NBVAL_IGNORE_OUTPUT</span>
-<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
 
-<span class="k">def</span> <span class="nf">complex_task</span><span class="p">(</span><span class="n">task</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">complex_task</span><span class="p">(</span><span class="n">task</span><span class="p">):</span>
     <span class="n">task</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">task</span><span class="o">=</span><span class="n">dummy_task</span><span class="p">,</span> <span class="n">severity_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
     <span class="n">task</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">task</span><span class="o">=</span><span class="n">dummy_task</span><span class="p">,</span> <span class="n">severity_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
     <span class="n">task</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">task</span><span class="o">=</span><span class="n">dummy_task</span><span class="p">,</span> <span class="n">severity_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
@@ -204,7 +203,7 @@ I did a lot of things!!!
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># NBVAL_IGNORE_OUTPUT</span>
-<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
 
 <span class="n">nrp</span> <span class="o">=</span> <span class="n">nr</span><span class="o">.</span><span class="n">with_processors</span><span class="p">([</span><span class="n">PrintResult</span><span class="p">(</span><span class="n">severity_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)])</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">nrp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">task</span><span class="o">=</span><span class="n">complex_task</span><span class="p">)</span>  <span class="c1"># `_ = something` discards the result explicitly, not needed</span>

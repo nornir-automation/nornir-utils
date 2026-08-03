@@ -1,9 +1,9 @@
 .. image:: https://img.shields.io/badge/docs-passing-green.svg
-   :target: https://nornir.tech/nornir_utils/
+   :target: https://nornir.tech/nornir-utils/
    :alt: Documentation
 
-.. image:: https://github.com/nornir-automation/nornir_utils/workflows/test_nornir_utils/badge.svg
-   :target: https://github.com/nornir-automation/nornir_utils/actions?query=workflow%3Atest_nornir_utils
+.. image:: https://github.com/nornir-automation/nornir-utils/workflows/test_nornir_utils/badge.svg
+   :target: https://github.com/nornir-automation/nornir-utils/actions?query=workflow%3Atest_nornir_utils
    :alt: test_nornir_utils
 
 nornir_utils
