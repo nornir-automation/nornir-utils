@@ -1,7 +1,7 @@
 import logging
 import pprint
 import threading
-from typing import List, cast, Optional, Union
+from typing import cast
 from collections import OrderedDict
 import json
 
@@ -36,7 +36,7 @@ def _get_color(result: Result, failed: bool) -> str:
 
 def _print_individual_result(
     result: Result,
-    attrs: List[str],
+    attrs: list[str],
     failed: bool,
     severity_level: int,
     task_group: bool = False,
@@ -67,8 +67,8 @@ def _print_individual_result(
 
 
 def _print_result(
-    result: Union[Result, AggregatedResult, MultiResult],
-    attrs: Optional[List[str]] = None,
+    result: Result | AggregatedResult | MultiResult,
+    attrs: list[str] | None = None,
     failed: bool = False,
     severity_level: int = logging.INFO,
     print_host: bool = False,
@@ -107,8 +107,8 @@ def _print_result(
 
 
 def print_result(
-    result: Union[Result, AggregatedResult, MultiResult],
-    vars: Optional[List[str]] = None,
+    result: Result | AggregatedResult | MultiResult,
+    vars: list[str] | None = None,
     failed: bool = False,
     severity_level: int = logging.INFO,
 ) -> None:

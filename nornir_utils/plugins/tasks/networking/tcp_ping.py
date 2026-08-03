@@ -1,10 +1,9 @@
 import socket
-from typing import Optional, List
 
 from nornir.core.task import Result, Task
 
 
-def tcp_ping(task: Task, ports: List[int], timeout: int = 2, host: Optional[str] = None) -> Result:
+def tcp_ping(task: Task, ports: list[int], timeout: int = 2, host: str | None = None) -> Result:
     """
     Tests connection to a tcp port and tries to establish a three way
     handshake. To be used for network discovery or testing.

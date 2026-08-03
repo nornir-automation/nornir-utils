@@ -89,8 +89,9 @@ skip-magic-trailing-comma = false
 line-ending = "auto"
 
 [tool.ruff.lint]
-# Port of the previous pylama linters: pep8 (E/W) + pyflakes (F) + mccabe (C90)
-select = ["E", "W", "F", "C90"]
+# Port of the previous pylama linters: pep8 (E/W) + pyflakes (F) + mccabe (C90),
+# plus the pyupgrade rules that keep annotations on PEP 585/604 syntax.
+select = ["E", "W", "F", "C90", "UP006", "UP007", "UP035", "UP045"]
 
 [tool.ruff.lint.mccabe]
 max-complexity = 10

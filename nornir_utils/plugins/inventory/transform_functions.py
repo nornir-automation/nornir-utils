@@ -1,11 +1,8 @@
 import os
-from typing import Optional
 from nornir.core.inventory import Host
 
 
-def load_credentials(
-    host: Host, username: Optional[str] = None, password: Optional[str] = None
-) -> None:
+def load_credentials(host: Host, username: str | None = None, password: str | None = None) -> None:
     """
     load_credentials is an transform_functions to add credentials to every host.
     Environment variables `NORNIR_USERNAME` and `NORNIR_PASSWORD` or arguments can be used.
