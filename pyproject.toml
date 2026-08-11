@@ -89,12 +89,76 @@ skip-magic-trailing-comma = false
 line-ending = "auto"
 
 [tool.ruff.lint]
-# Port of the previous pylama linters: pep8 (E/W) + pyflakes (F) + mccabe (C90),
-# plus the pyupgrade rules that keep annotations on PEP 585/604 syntax.
-select = ["E", "W", "F", "C90", "UP006", "UP007", "UP035", "UP045"]
+select = ["ALL"]
+
+ignore = [
+    "COM812", # Conflicts with the formatter, ruff warns unless disabled
+    "CPY001", # Missing copyright notice at top of file
+    "D203",   # Incompatible with D211, ruff warns unless one is disabled
+    "D213",   # Incompatible with D212, ruff warns unless one is disabled
+]
 
 [tool.ruff.lint.mccabe]
 max-complexity = 10
+
+
+[tool.ruff.lint.per-file-ignores]
+
+
+"nornir_utils/**/*.py" = [
+    ##################################################################################################
+    # Review and change the below later                                                              #
+    ##################################################################################################
+    "A002",    # Function argument is shadowing a Python builtin
+    "ANN401",  # Dynamically typed expressions (typing.Any) disallowed
+    "ARG002",  # Unused method argument
+    "D100",    # Missing docstring in public module
+    "D101",    # Missing docstring in public class
+    "D102",    # Missing docstring in public method
+    "D104",    # Missing docstring in public package
+    "D107",    # Missing docstring in `__init__`
+    "D200",    # One-line docstring should fit on one line
+    "D202",    # No blank lines allowed after function docstring
+    "D205",    # 1 blank line required between summary line and description
+    "D212",    # Multi-line docstring summary should start at the first line
+    "D400",    # First line should end with a period
+    "D401",    # First line of docstring should be in imperative mood
+    "D412",    # No blank lines allowed between a section header and its content
+    "D413",    # Missing blank line after last section
+    "D415",    # First line should end with a period, question mark, or exclamation point
+    "D417",    # Missing argument description in the docstring
+    "EM101",   # Exception must not use a string literal, assign to variable first
+    "FBT001",  # Boolean-typed positional argument in function definition
+    "FBT002",  # Boolean default positional argument in function definition
+    "I001",    # Import block is un-sorted or un-formatted
+    "PLR0913", # Too many arguments in function definition
+    "PLR0917", # Too many positional arguments
+    "PTH110",  # `os.path.exists()` should be replaced by `Path.exists()`
+    "PTH123",  # `open()` should be replaced by `Path.open()`
+    "RUF022",  # `__all__` is not sorted
+    "SIM108",  # Use ternary operator instead of `if`-`else`-block
+    "T201",    # `print` found
+    "T203",    # `pprint` found
+    "TC006",   # Add quotes to type expression in `typing.cast()`
+    "TRY003",  # Avoid specifying long messages outside the exception class
+    "TRY004",  # Prefer `TypeError` exception for invalid type
+    "UP015",   # Unnecessary mode argument
+    "UP024",   # Replace aliased errors with `OSError`
+    "UP032",   # Use f-string instead of `format` call
+    "UP041",   # Replace aliased errors with `TimeoutError`
+]
+
+
+"docs/source/conf.py" = [
+    ##################################################################################################
+    # Review and change the below later                                                              #
+    ##################################################################################################
+    "A001",   # Variable is shadowing a Python builtin
+    "D100",   # Missing docstring in public module
+    "ERA001", # Found commented-out code
+    "INP001", # File is part of an implicit namespace package, add an `__init__.py`
+]
+
 
 [build-system]
 requires = ["uv_build>=0.11.0,<0.12.0"]
