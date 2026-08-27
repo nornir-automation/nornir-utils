@@ -1,0 +1,4 @@
+---
+group_1:
+    data:
+        my_var: comes_from_group_1

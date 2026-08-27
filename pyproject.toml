@@ -73,6 +73,7 @@ warn_redundant_casts = true
 
 [tool.pytest.ini_options]
 #addopts = --cov=nornir --cov-report=term-missing -vs
+pythonpath = ["."]
 filterwarnings = [
     "ignore::nornir.core.exceptions.ConflictingConfigurationWarning",
 ]
@@ -146,6 +147,11 @@ max-complexity = 10
     "UP024",   # Replace aliased errors with `OSError`
     "UP032",   # Use f-string instead of `format` call
     "UP041",   # Replace aliased errors with `TimeoutError`
+]
+
+
+"tests/**/*.py" = [
+    "S101",   # Use of `assert` detected, ok in tests
 ]
 
 

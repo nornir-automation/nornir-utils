@@ -32,7 +32,7 @@ stop_dev_env:
 .PHONY: pytest
 pytest:
 	rm -f docs/source/tutorials/out_files/*.txt
-	uv run pytest --nbval -vs ${ARGS} docs/source/tutorials
+	uv run pytest --nbval -vs ${ARGS} tests docs/source/tutorials
 
 .PHONY: format
 format:
