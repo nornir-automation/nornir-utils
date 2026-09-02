@@ -1,6 +1,5 @@
-from nornir.core.task import Result, Task
-
 import ruamel.yaml
+from nornir.core.task import Result, Task
 
 
 def load_yaml(task: Task, file: str) -> Result:
