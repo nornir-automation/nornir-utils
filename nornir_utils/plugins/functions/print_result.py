@@ -15,9 +15,7 @@ init(autoreset=True, strip=False)
 
 
 def print_title(title: str) -> None:
-    """
-    Helper function to print a title.
-    """
+    """Print a title as a banner."""
     msg = "**** {} ".format(title)
     print("{}{}{}{}".format(Style.BRIGHT, Fore.GREEN, msg, "*" * (80 - len(msg))))
 
@@ -110,14 +108,14 @@ def print_result(
     failed: bool = False,
     severity_level: int = logging.INFO,
 ) -> None:
-    """
-    Prints an object of type `nornir.core.task.Result`
+    """Print an object of type `nornir.core.task.Result`.
 
     Arguments:
       result: from a previous task
       vars: Which attributes you want to print
       failed: if ``True`` assume the task failed
-      severity_level: Print only errors with this severity level or higher
+      severity_level: Print only results with this severity level or higher
+
     """
     LOCK.acquire()
     try:

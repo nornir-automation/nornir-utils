@@ -92,11 +92,14 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="nornir_utils.plugins.tasks.data.echo_data">
 <span class="sig-prename descclassname"><span class="pre">nornir_utils.plugins.tasks.data.</span></span><span class="sig-name descname"><span class="pre">echo_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Task</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Result</span></span></span><a class="headerlink" href="#nornir_utils.plugins.tasks.data.echo_data" title="Link to this definition"></a></dt>
-<dd><p>Dummy task that echoes the data passed to it. Useful in grouped_tasks
-to debug data passed to tasks.</p>
+<dd><p>Echo back the data passed to the task.</p>
+<p>This dummy task is useful in grouped tasks to debug the data passed to tasks.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>**kwargs</strong> – Any &lt;key,value&gt; pair you want</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>task</strong> – Nornir task object, provided automatically when the task is run</p></li>
+<li><p><strong>**kwargs</strong> – Any &lt;key,value&gt; pair you want</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><ul class="simple">
@@ -113,19 +116,21 @@ to debug data passed to tasks.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="nornir_utils.plugins.tasks.data.load_json">
 <span class="sig-prename descclassname"><span class="pre">nornir_utils.plugins.tasks.data.</span></span><span class="sig-name descname"><span class="pre">load_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Task</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Result</span></span></span><a class="headerlink" href="#nornir_utils.plugins.tasks.data.load_json" title="Link to this definition"></a></dt>
-<dd><p>Loads a json file.</p>
+<dd><p>Load a json file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>file</strong> – path to the file containing the json file to load</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>task</strong> – Nornir task object, provided automatically when the task is run</p></li>
+<li><p><strong>file</strong> – path to the json file to load</p></li>
+</ul>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>Simple example with <code class="docutils literal notranslate"><span class="pre">ordered_dict</span></code>:</p>
+<p>Simple example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">nr</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">task</span><span class="o">=</span><span class="n">load_json</span><span class="p">,</span>
          <span class="n">file</span><span class="o">=</span><span class="s2">&quot;mydata.json&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>file: path to the file containing the json file to load</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><ul class="simple">
@@ -142,14 +147,17 @@ to debug data passed to tasks.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="nornir_utils.plugins.tasks.data.load_yaml">
 <span class="sig-prename descclassname"><span class="pre">nornir_utils.plugins.tasks.data.</span></span><span class="sig-name descname"><span class="pre">load_yaml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Task</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Result</span></span></span><a class="headerlink" href="#nornir_utils.plugins.tasks.data.load_yaml" title="Link to this definition"></a></dt>
-<dd><p>Loads a yaml file.</p>
+<dd><p>Load a yaml file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>file</strong> – path to the file containing the yaml file to load</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>task</strong> – Nornir task object, provided automatically when the task is run</p></li>
+<li><p><strong>file</strong> – path to the yaml file to load</p></li>
+</ul>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>Simple example with <code class="docutils literal notranslate"><span class="pre">ordered_dict</span></code>:</p>
+<p>Simple example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">nr</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">task</span><span class="o">=</span><span class="n">load_yaml</span><span class="p">,</span>
          <span class="n">file</span><span class="o">=</span><span class="s2">&quot;mydata.yaml&quot;</span><span class="p">)</span>
 </pre></div>
@@ -170,19 +178,20 @@ to debug data passed to tasks.</p>
 <dl class="py function" id="module-nornir_utils.plugins.tasks.files">
 <dt class="sig sig-object py" id="nornir_utils.plugins.tasks.files.write_file">
 <span class="sig-prename descclassname"><span class="pre">nornir_utils.plugins.tasks.files.</span></span><span class="sig-name descname"><span class="pre">write_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Task</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">append</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dry_run</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Result</span></span></span><a class="headerlink" href="#nornir_utils.plugins.tasks.files.write_file" title="Link to this definition"></a></dt>
-<dd><p>Write contents to a file (locally)</p>
+<dd><p>Write contents to a file (locally).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dry_run</strong> – Whether to apply changes or not</p></li>
+<li><p><strong>task</strong> – Nornir task object, provided automatically when the task is run</p></li>
 <li><p><strong>filename</strong> – file you want to write into</p></li>
 <li><p><strong>content</strong> – content you want to write</p></li>
 <li><p><strong>append</strong> – whether you want to replace the contents or append to it</p></li>
+<li><p><strong>dry_run</strong> – Whether to apply changes or not</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><ul class="simple">
-<li><p>changed (<code class="docutils literal notranslate"><span class="pre">bool</span></code>):</p></li>
+<li><p>changed (<code class="docutils literal notranslate"><span class="pre">bool</span></code>): whether the file contents changed (or would, in a dry run)</p></li>
 <li><p>diff (<code class="docutils literal notranslate"><span class="pre">str</span></code>): unified diff</p></li>
 </ul>
 </p>
@@ -195,12 +204,13 @@ to debug data passed to tasks.</p>
 
 <dl class="py function" id="module-nornir_utils.plugins.tasks.networking">
 <dt class="sig sig-object py" id="nornir_utils.plugins.tasks.networking.tcp_ping">
-<span class="sig-prename descclassname"><span class="pre">nornir_utils.plugins.tasks.networking.</span></span><span class="sig-name descname"><span class="pre">tcp_ping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Task</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ports</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Result</span></span></span><a class="headerlink" href="#nornir_utils.plugins.tasks.networking.tcp_ping" title="Link to this definition"></a></dt>
-<dd><p>Tests connection to a tcp port and tries to establish a three way
-handshake. To be used for network discovery or testing.</p>
+<span class="sig-prename descclassname"><span class="pre">nornir_utils.plugins.tasks.networking.</span></span><span class="sig-name descname"><span class="pre">tcp_ping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Task</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ports</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Result</span></span></span><a class="headerlink" href="#nornir_utils.plugins.tasks.networking.tcp_ping" title="Link to this definition"></a></dt>
+<dd><p>Test connectivity to tcp ports by trying to establish a three way handshake.</p>
+<p>To be used for network discovery or testing.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
+<li><p><strong>task</strong> – Nornir task object, provided automatically when the task is run</p></li>
 <li><p><strong>ports</strong> (<em>list</em><em> of </em><em>int</em>) – tcp ports to ping</p></li>
 <li><p><strong>timeout</strong> (<em>int</em><em>, </em><em>optional</em>) – defaults to 2</p></li>
 <li><p><strong>host</strong> (<em>string</em><em>, </em><em>optional</em>) – defaults to <code class="docutils literal notranslate"><span class="pre">hostname</span></code></p></li>
