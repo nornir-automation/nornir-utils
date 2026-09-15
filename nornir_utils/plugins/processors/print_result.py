@@ -3,7 +3,6 @@ import threading
 from typing import cast
 
 from colorama import Fore, Style, init
-
 from nornir.core.inventory import Host
 from nornir.core.task import AggregatedResult, MultiResult, Result, Task
 
