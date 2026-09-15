@@ -4,21 +4,21 @@ from nornir.core.task import Result, Task
 
 
 def tcp_ping(task: Task, ports: list[int], timeout: int = 2, host: str | None = None) -> Result:
-    """
-    Tests connection to a tcp port and tries to establish a three way
-    handshake. To be used for network discovery or testing.
+    """Test connectivity to tcp ports by trying to establish a three way handshake.
+
+    To be used for network discovery or testing.
 
     Arguments:
+        task: Nornir task object, provided automatically when the task is run
         ports (list of int): tcp ports to ping
         timeout (int, optional): defaults to 2
         host (string, optional): defaults to ``hostname``
 
-
     Returns:
         Result object with the following attributes set:
           * result (``dict``): Contains port numbers as keys with True/False as values
-    """
 
+    """
     if isinstance(ports, int):
         ports = [ports]
 
