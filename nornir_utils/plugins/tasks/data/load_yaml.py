@@ -3,15 +3,14 @@ from nornir.core.task import Result, Task
 
 
 def load_yaml(task: Task, file: str) -> Result:
-    """
-    Loads a yaml file.
+    """Load a yaml file.
 
     Arguments:
-        file: path to the file containing the yaml file to load
+        task: Nornir task object, provided automatically when the task is run
+        file: path to the yaml file to load
 
     Examples:
-
-        Simple example with ``ordered_dict``::
+        Simple example::
 
             > nr.run(task=load_yaml,
                      file="mydata.yaml")
@@ -19,6 +18,7 @@ def load_yaml(task: Task, file: str) -> Result:
     Returns:
         Result object with the following attributes set:
           * result (``dict``): dictionary with the contents of the file
+
     """
     with open(file, "r") as f:
         yml = ruamel.yaml.YAML(typ="safe")

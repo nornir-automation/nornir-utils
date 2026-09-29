@@ -20,11 +20,11 @@ def _get_color(result: MultiResult | Result) -> str:
 
 
 class PrintResult:
-    """
-    Prints information about the task execution on screen.
+    """Prints information about the task execution on screen.
 
     Arguments:
         severity_level: Print only results with this severity level or higher
+
     """
 
     def __init__(self, severity_level: int = logging.INFO) -> None:

@@ -118,16 +118,6 @@ max-complexity = 10
     "D102",    # Missing docstring in public method
     "D104",    # Missing docstring in public package
     "D107",    # Missing docstring in `__init__`
-    "D200",    # One-line docstring should fit on one line
-    "D202",    # No blank lines allowed after function docstring
-    "D205",    # 1 blank line required between summary line and description
-    "D212",    # Multi-line docstring summary should start at the first line
-    "D400",    # First line should end with a period
-    "D401",    # First line of docstring should be in imperative mood
-    "D412",    # No blank lines allowed between a section header and its content
-    "D413",    # Missing blank line after last section
-    "D415",    # First line should end with a period, question mark, or exclamation point
-    "D417",    # Missing argument description in the docstring
     "EM101",   # Exception must not use a string literal, assign to variable first
     "FBT001",  # Boolean-typed positional argument in function definition
     "FBT002",  # Boolean default positional argument in function definition

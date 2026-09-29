@@ -33,19 +33,20 @@ def write_file(
     append: bool = False,
     dry_run: bool | None = None,
 ) -> Result:
-    """
-    Write contents to a file (locally)
+    """Write contents to a file (locally).
 
     Arguments:
-        dry_run: Whether to apply changes or not
+        task: Nornir task object, provided automatically when the task is run
         filename: file you want to write into
         content: content you want to write
         append: whether you want to replace the contents or append to it
+        dry_run: Whether to apply changes or not
 
     Returns:
         Result object with the following attributes set:
-          * changed (``bool``):
+          * changed (``bool``): whether the file contents changed (or would, in a dry run)
           * diff (``str``): unified diff
+
     """
     diff = _generate_diff(filename, content, append)
 
